@@ -1,18 +1,23 @@
 \NeedsTeXFormat{LaTeX2e}[2020/02/02]
-\ProvidesClass{my-cv}[2020/08/19 - v1.0.0 - CV Latex Class]
+\ProvidesClass{my-cv}[2020/08/19 - v1.1.0 - CV Latex Class]
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % OPTIONS                                       %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%%% cvroundpic option
+%%%%% cvroundpic option (v1.0.0) %%%%%
 \newif\if@cvroundpic
 \DeclareOption{cvroundpic}{\@cvroundpictrue}
 
-%%% cvnorules option
+%%%%% cvnorules option (v1.0.0) %%%%%
 \newif\if@cvnorules
 \DeclareOption{cvnorules}{\@cvnorulestrue}
 
+%%%%% cvsitesatleft option (v1.1.0) %%%%%
+\newif\if@cvsitesatleft
+\DeclareOption{cvsitesatleft}{\@cvsitesatlefttrue}
+
+%%%%% article class options %%%%%
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{article}}
 \ProcessOptions\relax
 
@@ -338,9 +343,18 @@
 
 \newcommand\CVHeader{
   \begingroup
-  \make@CV@Header@Picture
+  \if@cvsitesatleft
+    \make@CV@Header@Sites
+  \else
+    \make@CV@Header@Picture
+  \fi
   \make@CV@Header@Main
-  \make@CV@Header@Sites\hfill
+  \if@cvsitesatleft
+    \make@CV@Header@Picture
+  \else
+    \make@CV@Header@Sites
+  \fi
+  \hfill
   \make@CV@Header@Rule
   \bigskip
   \endgroup
