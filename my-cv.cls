@@ -53,9 +53,12 @@
 
 \colorlet{CVFirstNameColor}{black}
 \colorlet{CVLastNameColor}{black}
-\colorlet{CVEmailColor}{black}
-\colorlet{CVPhoneColor}{black}
-\colorlet{CVSitesColor}{black}
+\colorlet{CVEmailTextColor}{black}
+\colorlet{CVEmailIconColor}{black}
+\colorlet{CVPhoneTextColor}{black}
+\colorlet{CVPhoneIconColor}{black}
+\colorlet{CVSitesTextColor}{black}
+\colorlet{CVSitesIconColor}{black}
 \colorlet{CVHeaderRuleColor}{black}
 
 
@@ -227,20 +230,18 @@
 \def\make@CV@Header@Main@Extras@Phone{
   {
     \CV@Header@Main@Extras@PhoneFont
-    \color{CVPhoneColor}{
-      \faPhone
-      \hspace{0pt}
-      \CV@Header@Main@Phone
-    }
+    \color{CVPhoneIconColor}{\faPhone}
+    \hspace{0pt}
+    \color{CVPhoneTextColor}{\CV@Header@Main@Phone}
   }
 }
 
 \def\make@CV@Header@Main@Extras@Email{
   {
     \CV@Header@Main@Extras@EmailFont
-    \color{CVEmailColor}{
-      \faEnvelope
-      \hspace{2pt}
+    \color{CVEmailIconColor}{\faEnvelope}
+    \hspace{-3pt}
+    \color{CVEmailTextColor}{
       \href{mailto:\CV@Header@Main@Email}{\CV@Header@Main@Email}
     }
   }
@@ -271,9 +272,9 @@
 \def\CV@Header@SitesWidth{4cm}
 
 \newcommand\CV@Header@Sites@Item[3]{
-  #1
+  \color{CVSitesIconsColor}{#1}
   \hspace{-2pt}
-  \href{#2}{#3}
+  \color{CVSitesTextColor}{\href{#2}{#3}}
   \par
 }
 
@@ -306,7 +307,6 @@
   \@ifundefined{CV@Header@Sites}{\hspace{\CV@Header@SitesWidth}}{
     \begin{minipage}{\CV@Header@SitesWidth}
       \CV@Header@SitesFont
-      \color{CVSitesColor}
       \CV@Header@Sites
     \end{minipage}
   }
