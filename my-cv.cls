@@ -33,7 +33,7 @@
 \RequirePackage{xparse}
 \RequirePackage{dashrule}
 
-\usepackage[hidelinks]{hyperref}
+\usepackage{hyperref}
 \usepackage{fontspec}
 \usepackage{fontawesome5}
 \usepackage{tikz}
@@ -80,8 +80,6 @@
 \colorlet{CVItemUbicationIconColor}{black}
 \colorlet{CVItemUbicationTextColor}{black}
 \colorlet{CVItemRuleDividerColor}{black}
-
-
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % FONTS                                          %
@@ -505,7 +503,7 @@
   {
     \raggedright
     \IfNoValueTF{#1}{
-      \makeCV@Body@Section@Title{#4}
+      \make@CV@Body@Section@Title{#4}
     }{
       \begin{minipage}{#2}
         \make@CV@Body@Section@Secondary{#1}
