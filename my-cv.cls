@@ -77,8 +77,8 @@
 \colorlet{CVItemSecondaryColor}{black}
 \colorlet{CVItemCalendarIconColor}{black}
 \colorlet{CVItemCalendarTextColor}{black}
-\colorlet{CVItemUbicationIconColor}{black}
-\colorlet{CVItemUbicationTextColor}{black}
+\colorlet{CVItemLocationIconColor}{black}
+\colorlet{CVItemLocationTextColor}{black}
 \colorlet{CVItemRuleDividerColor}{black}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -95,27 +95,27 @@
 
 %%%%%%%%%%%%%%%%%%%%% Header %%%%%%%%%%%%%%%%%%%%%
 
-\def\CV@Header@Main@FirstNameFont{\Huge\bfseries}
+\def\CV@Header@Main@FirstNameFont{\normalsize}
 \newcommand\CVFirstNameFont[1]{
 	\def\CV@Header@Main@FirstNameFont{#1}
 }
 
-\def\CV@Header@Main@LastNameFont{\huge\bfseries}
+\def\CV@Header@Main@LastNameFont{\normalsize}
 \newcommand\CVLastNameFont[1]{
 	\def\CV@Header@Main@LastNameFont{#1}
 }
 
-\def\CV@Header@Main@Extras@PhoneFont{\normalsize\itshape}
+\def\CV@Header@Main@Extras@PhoneFont{\normalsize}
 \newcommand\CVPhoneFont[1]{
   \def\CV@Header@Main@Extras@PhoneFont{#1}
 }
 
-\def\CV@Header@Main@Extras@EmailFont{\normalsize\itshape}
+\def\CV@Header@Main@Extras@EmailFont{\normalsize}
 \newcommand\CVEmailFont[1]{
 	\def\CV@Header@Main@Extras@EmailFont{#1}
 }
 
-\def\CV@Header@SitesFont{\normalsize\itshape}
+\def\CV@Header@SitesFont{\normalsize}
 \newcommand\CVSitesFont[1]{
 	\def\CV@Header@SitesFont{#1}
 }
@@ -125,12 +125,12 @@
 
 %%%%% Sections %%%%%
 
-\def\CV@Body@Section@Header@TitleFont{\LARGE\bfseries}
+\def\CV@Body@Section@Header@TitleFont{\normalsize}
 \newcommand\CVSectionHeaderTitleFont[1]{
 	\def\CV@Body@Section@Header@TitleFont{#1}
 }
 
-\def\CV@Body@Section@Header@SecondaryFont{\LARGE\bfseries}
+\def\CV@Body@Section@Header@SecondaryFont{\normalsize}
 \newcommand\CVSectionHeaderSecondaryFont[1]{
 	\def\CV@Body@Section@Header@SecondaryFont{#1}
 }
@@ -138,22 +138,22 @@
 
 %%%%%% Items %%%%%%
 
-\def\CV@Body@Section@Item@MainFont{\Large\bfseries}
+\def\CV@Body@Section@Item@MainFont{\normalsize}
 \newcommand\CVItemMainFont[1]{
 	\def\CV@Body@Section@Item@MainFont{#1}
 }
 
-\def\CV@Body@Section@Item@SeparatorFont{\Large\bfseries}
+\def\CV@Body@Section@Item@SeparatorFont{\normalsize}
 \newcommand\CVItemSeparatorFont[1]{
 	\def\CV@Body@Section@Item@SeparatorFont{#1}
 }
 
-\def\CV@Body@Section@Item@SecondaryFont{\Large\itshape}
+\def\CV@Body@Section@Item@SecondaryFont{\normalsize}
 \newcommand\CVItemSecondaryFont[1]{
 	\def\CV@Body@Section@Item@SecondaryFont{#1}
 }
 
-\def\CV@Body@Section@Item@TertiaryFont{\large}
+\def\CV@Body@Section@Item@TertiaryFont{\normalsize}
 \newcommand\CVItemTertiaryFont[1]{
 	\def\CV@Body@Section@Item@TertiaryFont{#1}
 }
@@ -165,7 +165,7 @@
 
 %%%%%%%%%%%%%%%%%%%% Picture %%%%%%%%%%%%%%%%%%%%%
 
-\def\CV@Header@PictureWidth{3cm}
+\def\CV@Header@PictureWidth{0cm}
 \def\CV@Header@Picture@RoundedOptions@Scale{1}
 \def\CV@Header@Picture@RoundedOptions@XShift{0cm}
 \def\CV@Header@Picture@RoundedOptions@YShift{0cm}
@@ -267,7 +267,7 @@
 
 %%%%%%%%%%%%%%%%%%%%% Sites %%%%%%%%%%%%%%%%%%%%%%
 
-\def\CV@Header@SitesWidth{4cm}
+\def\CV@Header@SitesWidth{0cm}
 
 \newcommand\CV@Header@Sites@Item[3]{
   \color{CVSitesIconsColor}{#1}
@@ -293,7 +293,7 @@
 
 \def\CV@Header@Sites@Twitter@URL{https://twitter.com/}
 \newcommand\CV@Header@Sites@Twitter[1]{
-  \CV@Header@Sites@Item{\faTwitter}{\CV@Header@Sites@Twitter@URL#1}{@#1}
+  \CV@Header@Sites@Item{\faTwitter}{\CV@Header@Sites@Twitter@URL#1}{#1}
 }
 
 \def\CV@Header@Sites@Orcid@URL{https://orcid.org/}
@@ -463,15 +463,16 @@
   \def\CV@Body@Section@Rule@Width{#1}
 }
 
+\def\CV@Body@Section@ItemsSeparation{1cm}
+\newcommand\CVSectionElementsSeparation[1]{
+  \def\CV@Body@Section@ItemsSeparation{#1}
+}
+
 \def\CV@Body@Section@Rule@Separation{0ex}
 \newcommand\CVSectionRuleSeparation[1]{
   \def\CV@Body@Section@Rule@Separation{#1}
 }
 
-\def\CV@Body@Section@ItemsSeparation{1cm}
-\newcommand\CVSectionElementsSeparation[1]{
-  \def\CV@Body@Section@ItemsSeparation{#1}
-}
 
 \newcommand\make@CV@Body@Section@Rule{
   {
@@ -529,6 +530,11 @@
   \def\CV@Body@Section@Item@ItemsSeparation{#1}
 }
 
+\def\CV@Body@Section@Item@ItemsSeparator{--}
+\newcommand\CVItemHeaderSeparator[1]{
+  \def\CV@Body@Section@Item@ItemsSeparator{#1}
+}
+
 \newcommand\make@CV@Body@Section@Item@Main[1]{
   {
     \CV@Body@Section@Item@MainFont
@@ -537,12 +543,12 @@
   }
 }
 
-\newcommand\make@CV@Body@Section@Item@Separator[1]{
+\newcommand\make@CV@Body@Section@Item@Separator[2]{
   \hspace{#1}
   {
     \CV@Body@Section@Item@SeparatorFont
     \color{CVItemSeparatorColor}
-    |
+    #2
   }
   \hspace{#1}
 }
@@ -568,34 +574,37 @@
   }
 }
 
-\newcommand\make@CV@Body@Section@Item@Ubication[1]{
+\newcommand\make@CV@Body@Section@Item@Location[1]{
   \makebox[0.45\linewidth][l]{
     {
-      \color{CVItemUbicationIconColor}
+      \color{CVItemLocationIconColor}
       \faMapMarker*
     }
     \hspace{-1.5pt}
     \CV@Body@Section@Item@TertiaryFont
-    \color{CVItemUbicationTextColor}
+    \color{CVItemLocationTextColor}
     #1
   }
 }
 
 \NewDocumentCommand\CVItem{
-  D(){\CV@Body@Section@Item@ItemsSeparation}
+  O{\CV@Body@Section@Item@ItemsSeparation}
   m
-  m
+  O{\CV@Body@Section@Item@ItemsSeparator}
   m
   o
+  d()
 }{
   \medskip
   \make@CV@Body@Section@Item@Main{#2}
-  \make@CV@Body@Section@Item@Separator{#1}
-  \make@CV@Body@Section@Item@Secondary{#3}
+  \make@CV@Body@Section@Item@Separator{#1}{#3}
+  \make@CV@Body@Section@Item@Secondary{#4}
   \par\medskip
-  \make@CV@Body@Section@Item@Calendar{#4}
   \IfNoValueF{#5}{
-    \make@CV@Body@Section@Item@Ubication{#5}
+  	\make@CV@Body@Section@Item@Calendar{#5}
+  }
+  \IfNoValueF{#6}{
+    \make@CV@Body@Section@Item@Location{#6}
   }
   \par\medskip
 }
@@ -608,10 +617,12 @@
   \def\CVBody@Section@Item@RuleDivider@Width{#1}
 }
 
-\newcommand\CVItemDivider{
+\NewDocumentCommand\CVItemDivider{
+  O{\CVBody@Section@Item@RuleDivider@Width}
+}{
   {
     \color{CVItemRuleDividerColor}
-    \rule{0.95\linewidth}{\CVBody@Section@Item@RuleDivider@Width}
+    \rule{0.95\linewidth}{#1}
   }
   \par
 }
