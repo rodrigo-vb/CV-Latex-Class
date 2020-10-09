@@ -32,13 +32,11 @@
 \RequirePackage{graphicx}
 \RequirePackage{xparse}
 \RequirePackage{dashrule}
-
-\usepackage{hyperref}
-\usepackage{fontspec}
-\usepackage{fontawesome5}
-\usepackage{tikz}
-\usepackage{enumitem}
-\usepackage{etoolbox}
+\RequirePackage{hyperref}
+\RequirePackage{fontawesome5}
+\RequirePackage{tikz}
+\RequirePackage{enumitem}
+\RequirePackage{etoolbox}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % COLORS                                         %

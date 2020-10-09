@@ -1,0 +1,203 @@
+% If you do not want rules in your document, use the 'cvnorules' option.
+%\documentclass[cvnorules]{my-cv}
+
+% Use the 'cvsitesatleft' option if you prefer the sites group at the left (image and sites will swap places.
+%\documentclass[cvsitesatleft]{my-cv}
+
+\documentclass[11pt, a4paper, cvroundpic]{my-cv}
+
+\usepackage{multicol}
+\geometry{left=2cm,right=2cm,top=2cm,bottom=2cm}
+
+
+%%%%% COLORS %%%%%
+
+\definecolor{my-color}{HTML}{009900}
+\colorlet{CVBodyColor}{black!85!}
+
+%%% Header
+
+\colorlet{CVBodyColor}{black!85!}
+\colorlet{CVFirstNameColor}{black}
+\colorlet{CVLastNameColor}{CVFirstNameColor}
+
+\colorlet{CVEmailTextColor}{CVBodyColor}
+\colorlet{CVEmailIconColor}{my-color}
+\colorlet{CVPhoneTextColor}{CVBodyColor}
+\colorlet{CVPhoneIconColor}{my-color}
+\colorlet{CVSitesTextColor}{CVBodyColor}
+\colorlet{CVSitesIconsColor}{my-color}
+\colorlet{CVHeaderRuleColor}{my-color}
+
+%%% Body
+
+\colorlet{CVSectionHeaderTitleColor}{my-color}
+\colorlet{CVSectionHeaderSecondaryColor}{CVBodyColor}
+\colorlet{CVSectionHeaderRuleColor}{CVSectionHeaderTitleColor}
+
+\colorlet{CVItemMainColor}{black}
+\colorlet{CVItemSeparatorColor}{CVBodyColor}
+\colorlet{CVItemSecondaryColor}{CVItemMainColor}
+\colorlet{CVItemCalendarIconColor}{CVSectionHeaderTitleColor}
+\colorlet{CVItemCalendarTextCoor}{CVBodyColor}
+\colorlet{CVItemLocationIconColor}{CVSectionHeaderTitleColor}
+\colorlet{CVItemLocationTextColor}{CVBodyColor}
+\colorlet{CVItemRuleDividerColor}{my-color}
+
+\hypersetup{
+  colorlinks=true,
+  urlcolor=my-color!80!
+}
+
+
+%%%%% FONTS %%%%%
+% All fonts default to \normalsize.
+
+%%% Header
+
+\CVFirstNameFont{\Huge\bfseries}
+\CVLastNameFont{\huge\bfseries}
+
+\CVPhoneFont{\normalsize\itshape}
+\CVEmailFont{\normalsize\itshape}
+\CVSitesFont{\normalsize\itshape}
+
+%%% Body
+
+\CVSectionHeaderTitleFont{\LARGE\bfseries}
+\CVSectionHeaderSecondaryFont{\LARGE\bfseries}
+
+\CVItemMainFont{\Large\bfseries}
+\CVItemSeparatorFont{\Large\bfseries}
+\CVItemSecondaryFont{\Large\itshape}
+\CVItemTertiaryFont{\large}
+
+
+%%%%% STYLES %%%%%
+
+%%% Header
+
+\CVHeaderRuleWidth{3pt}
+\CVHeaderRuleSeparation{-1ex}
+
+%%% Body
+
+% Separation between the
+\CVSectionElementsSeparation{1cm}
+\CVSectionRuleSeparation{-1.5ex}
+\CVSectionRuleWidth{1.5pt}
+\CVItemHeaderSeparator{--}
+\CVItemHeaderSeparation{-5pt}
+\CVItemDividerWidth{0.5pt}
+
+%%% Items
+
+\CVItemizeBullet{
+  \color{my-color}
+  \normalsize
+  $\bullet$
+}
+
+
+%%%%% HEADER INFO %%%%%
+
+\CVMainInfo{
+  \FirstName{First Name}
+  \LastName{Last Name}
+
+  % When setting email and phone, order matters!
+  \Email{myemail@provider.domain}
+  \Phone{+00 000 00 00 00}
+}
+
+% You can specify the space you want to give to the image as an optional argument (defaults to 3cm).
+\CVPictureInfo[3cm]{sample-profile-image.png}
+
+% You can use these options to modify how the image will look instead having to crop/move/whatever the image.
+\CVRoundedPictureInfo{
+  \Scale{0.4}
+  %\Opacity{0.8}
+  %\XShift{0cm}
+  \YShift{-0.3cm}
+}
+
+% You can give the image a border. If you want a simple black border just use the next macro without options, but maybe you want something pretier...
+%\CVRoundedPictureBorderInfo
+\CVRoundedPictureBorderInfo[
+  \Width{1pt}
+  %\Dashed
+  %\Double
+  \Color{my-color!60!}
+]
+
+% Optional argument its the space these sites have (defaults to 4cm).
+% Also, when settings these, the order again matters.
+\CVSitesInfo[4.5cm]{
+  \WebPage{my-webpage.domain}
+  \LinkedIn{my-linkedin}
+  \GitHub{my-github}
+  \Twitter{my-twitter}
+  \Orcid{0000-0000-0000-0000}
+}
+
+
+\begin{document}
+
+  \CVHeader
+
+  % CVSection
+  %	 [<Secondary element>]
+  %  [<Distance between primary and secondary element>] Defaults to '1cm'.
+  %  (<Separation between the rule and the section header>) Defauls to '0ex'.
+  %  {<Section name>}
+
+  \CVSection[\faPortrait](-3.5ex){Section 1}
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+
+  \vspace{3mm}
+
+  \CVSection{Section 2}
+
+    % CVItem
+    %  [<Separation between the main and seconday elements>] Defaults to '7cm'.
+    %  {<Main element>}
+    %  [<Separator between the main and the seconday elements>] Defaults to '--'.
+    %  {<Secondary element>}
+    %  [<Date text>]
+    %  (<Location text>)
+
+    \CVItem{Puesto}{Place}[Date](Location)
+  	  \begin{itemize}
+  	    \item Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+  	    \item Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+  	    \item Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+  	  \end{itemize}
+
+	% \CVItemDivider
+	%  [<Rule width>] Default to '0.75pt'.
+
+	\CVItemDivider[0.5pt]
+
+	\vspace{2mm}
+
+    \CVItem{Puesto}{Place}[Date](Location)
+      \vspace{-3mm}
+      \begin{multicols}{2}
+  	    \begin{itemize}
+  	      \item Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+  	  	  \item Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+  	  	  \item Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+  	  	  \item Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+  	    \end{itemize}
+      \end{multicols}
+
+  \CVSection[\faPencil*](-3.5ex){Section 3}
+
+    \CVItem{Puesto}{Place}[Date]
+  	  \begin{itemize}
+  	    \item Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+  	    \item Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+  	    \item Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+  	  \end{itemize}
+
+\end{document}
