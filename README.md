@@ -72,8 +72,6 @@ There is a lot of colors you can use, both in the header...
 
 You can use `\definecolor` and `\colorlet` to define these colors.
 
----
-
 #### Fonts
 
 Same with fonts. Header:
