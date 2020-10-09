@@ -13,16 +13,16 @@ This is a CV class I create only for educational purposes. If you would like to 
 You will need `pdflatex` or `xelatex` to compile this class.
 
 This class use the next packages, so make sure you have them installed in the environment you use:
-- xcolor
-- geometry
-- graphicx
-- xparse
-- dashrule
-- hyperref
-- fontawesome5
-- tikz
-- enumitem
-- etoolbox
+- `xcolor`
+- `geometry`
+- `graphicx`
+- `xparse`
+- `dashrule`
+- `hyperref`
+- `fontawesome5`
+- `tikz`
+- `enumitem`
+- `etoolbox`
 
 
 ### Sites group
