@@ -1,6 +1,6 @@
 # CV/Résumé Latex class
 
-This is a CV class I create only for educational purposes. If you would like to use something 'fancier', then you should check [altacv](https://github.com/liantze/AltaCV), which I took as a reference when creating this class.
+This is a CV class I created for educational purposes only. If you would like to use something 'fancier', then you should check [altacv](https://github.com/liantze/AltaCV), which I took as a reference when creating this class.
 
 
 ## Sample
@@ -12,7 +12,7 @@ This is a CV class I create only for educational purposes. If you would like to 
 
 You will need `pdflatex` or `xelatex` to compile this class.
 
-This class use the next packages, so make sure you have them installed in the environment you use:
+This class uses the next packages, so make sure you have them installed in the environment you use:
 - `xcolor`
 - `geometry`
 - `graphicx`
@@ -27,7 +27,7 @@ This class use the next packages, so make sure you have them installed in the en
 
 ### Sites group
 
-You can use these macros to set a link to your favourite sites. Ke
+You can use these macros to set a link to your favourite sites.
 
 ```latex
 \CVSitesInfo{
@@ -43,7 +43,7 @@ You can use these macros to set a link to your favourite sites. Ke
 
 #### Colors
 
-There is a lot of colors you can use, both in the header...
+You can customize the colors for a lot of elements, both in the header...
 
 - `CVBodyColor`
 - `CVFirstNameColor`
@@ -95,4 +95,4 @@ Body:
 
 ---
 
-And there is more, check it in the [sample.tex](https://github.com/rodrigo-vb/cv-latex/blob/master/sample.tex) file (there is more info there).
+And there is more! Check it in the [sample.tex](https://github.com/rodrigo-vb/cv-latex/blob/master/sample.tex) file.

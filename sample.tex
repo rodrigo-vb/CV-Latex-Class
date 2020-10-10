@@ -1,7 +1,7 @@
 % If you do not want rules in your document, use the 'cvnorules' option.
 %\documentclass[cvnorules]{my-cv}
 
-% Use the 'cvsitesatleft' option if you prefer the sites group at the left (image and sites will swap places.
+% Use the 'cvsitesatleft' option if you prefer the sites group at the left (image and sites will swap places).
 %\documentclass[cvsitesatleft]{my-cv}
 
 \documentclass[11pt, a4paper, cvroundpic]{my-cv}
@@ -113,7 +113,7 @@
 % You can specify the space you want to give to the image as an optional argument (defaults to 3cm).
 \CVPictureInfo[3cm]{sample-profile-image.png}
 
-% You can use these options to modify how the image will look instead having to crop/move/whatever the image.
+% You can use these options to modify how the image will look instead of having to crop/move/whatever the image.
 \CVRoundedPictureInfo{
   \Scale{0.4}
   %\Opacity{0.8}
@@ -121,7 +121,7 @@
   \YShift{-0.3cm}
 }
 
-% You can give the image a border. If you want a simple black border just use the next macro without options, but maybe you want something pretier...
+% You can give the image a border. If you want a simple black border just use the next macro without options, but maybe you want something prettier...
 %\CVRoundedPictureBorderInfo
 \CVRoundedPictureBorderInfo[
   \Width{1pt}
@@ -130,8 +130,8 @@
   \Color{my-color!60!}
 ]
 
-% Optional argument its the space these sites have (defaults to 4cm).
-% Also, when settings these, the order again matters.
+% The optional argument is the space this group of sites have in the header (defaults to 4cm).
+% Also, when setting these, the order (again) matters.
 \CVSitesInfo[4.5cm]{
   \WebPage{my-webpage.domain}
   \LinkedIn{my-linkedin}
@@ -146,9 +146,9 @@
   \CVHeader
 
   % CVSection
-  %	 [<Secondary element>]
-  %  [<Distance between primary and secondary element>] Defaults to '1cm'.
-  %  (<Separation between the rule and the section header>) Defauls to '0ex'.
+  %  [<Secondary element>]
+  %  [<Distance between primary and secondary elements>] Defaults to '1cm'.
+  %  (<Separation between the rule and the section header>) Defaults to '0ex'.
   %  {<Section name>}
 
   \CVSection[\faPortrait](-3.5ex){Section 1}
@@ -159,9 +159,9 @@
   \CVSection{Section 2}
 
     % CVItem
-    %  [<Separation between the main and seconday elements>] Defaults to '7cm'.
+    %  [<Separation between the main and secondary elements>] Defaults to '7cm'.
     %  {<Main element>}
-    %  [<Separator between the main and the seconday elements>] Defaults to '--'.
+    %  [<Separator between the main and the secondary elements>] Defaults to '--'.
     %  {<Secondary element>}
     %  [<Date text>]
     %  (<Location text>)
